@@ -1,0 +1,55 @@
+<main class="form-signin">
+  {{#if success}}
+    <div class="alert alert-success" role="alert">
+      {{success}}
+    </div>
+  {{/if}}
+
+  {{#if errors}}
+    {{#each errors}}
+      {{#if message}}
+        <div class="alert alert-danger" role="alert">
+          {{message}}
+        </div>
+      {{else}}
+        <div class="alert alert-danger" role="alert">
+          {{this}}
+        </div>
+      {{/if}}
+    {{/each}}
+
+  {{/if}}
+
+  <form action="/login" method="post">
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    <button
+      onclick="window.history.back()"
+      class="btn btn-secondary mb-2"
+    >Back</button>
+
+    <div class="form-floating">
+      <input
+        type="email"
+        class="form-control"
+        id="floatingInput"
+        placeholder="name@example.com"
+        name="email"
+        required
+      />
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input
+        type="password"
+        class="form-control"
+        id="floatingPassword"
+        placeholder="Password"
+        name="password"
+        required
+      />
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+  </form>
+</main>

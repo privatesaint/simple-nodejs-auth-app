@@ -1,0 +1,66 @@
+<main class="form-signin">
+  {{#if errors}}
+    {{#each errors}}
+      <div class="alert alert-danger" role="alert">
+        {{message}}
+      </div>
+    {{/each}}
+
+  {{/if}}
+  <form action="/signup" method="POST">
+    <h1 class="h3 mb-3 fw-normal">Registration Form</h1>
+
+    <button
+      onclick="window.history.back()"
+      class="btn btn-secondary mb-2"
+    >Back</button>
+
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="floatingInput"
+        placeholder="Enter First Name"
+        required
+        name="firstName"
+      />
+      <label for="floatingInput">First Name</label>
+    </div>
+
+    <div class="form-floating">
+      <input
+        type="email"
+        class="form-control"
+        id="floatingInput"
+        placeholder="Enter Email"
+        name="email"
+        required
+      />
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input
+        type="password"
+        class="form-control"
+        id="floatingPassword"
+        placeholder="Password"
+        name="password"
+        required
+      />
+      <label for="floatingPassword">Password</label>
+    </div>
+    <div class="form-floating">
+      <input
+        type="password"
+        class="form-control"
+        id="floatingPassword"
+        placeholder="Confirm Password"
+        name="confirmPassword"
+        required
+      />
+      <label for="floatingPassword">Confirm Password</label>
+    </div>
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
+  </form>
+</main>
